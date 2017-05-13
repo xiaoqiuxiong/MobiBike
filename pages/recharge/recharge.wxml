@@ -1,0 +1,41 @@
+<!--recharge.wxml-->
+<!--车费余额模块-->
+<view class="balance">
+  <image src="../../images/mywallet.png"></image>
+  <view class="txt">
+    <text class="money">￥{{mymoney}}.00</text>
+    <text class="chinese">车费余额</text>
+  </view>
+</view>
+<!--充值金额模块-->
+<text class="balance-money">充值金额</text>
+<!--充值金额分类模块-->
+<view class="balance-demo" id="balanceDemo">
+  <form>
+      <block wx:for="{{navList}}">
+        <button class="type-nav {{curNav == item.id ? 'selected' : ''}}" bindtap="selectNav" data-index="{{index}}" data-id="{{item.id}}" data-money="{{item.money}}">
+          <text class="top type-nav {{curNav == item.id ? 'selected' : ''}}" data-index="{{index}}" data-id="{{item.id}}">{{item.chongzhi}}
+          </text>
+          <text class="botton type-nav {{curNav == item.id ? 'selected' : ''}}" data-index="{{index}}" data-id="{{item.id}}">{{item.song}}
+          </text>
+        </button>
+		</block>
+  </form>
+</view>
+<!--去充值模块-->
+<view class="goblance">
+  <view class="txt_t">
+    <view>点击去充值，即表示已经阅读并同意 <navigator url="../../pages/service/service">《充值协议》</navigator></view>
+    <text>摩拜不会以任何形式要求您输入银行账号和密码</text>
+    <button bindtap="goblance" data-money="500">去充值</button>
+  </view>
+  <view>押金{{yajinmoney}}元 <navigator url="url" bindtap="yajin">充押金</navigator></view>
+</view>
+<!--充值余额成功弹出层-->
+<modal class="mb-balance" hidden="{{lockhidden}}" title="充值成功" confirm-text="确定" bindconfirm="confirm" no-cancel="true">
+  您已成功充值{{sucmoney}}元。
+</modal>
+<!--充值余额弹出层-->
+<modal class="mb-yajin" hidden="{{yajinhidden}}" title="{{tajinmodaltitle}}" confirm-text="{{yajinmodaltxt}}" cancel-text="取消" bindcancel="yajincancel" bindconfirm="yajinconfirm"  no-cancel="{{nocancel}}">
+  {{yajintxt}}。
+</modal>

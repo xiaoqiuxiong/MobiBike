@@ -1,0 +1,11 @@
+<!--hongbao.wxml-->
+<view class="container">
+<!--红包背景图-->
+  <image class="beijing" src="../../images/hongbao@me.jpg"></image>
+  <!--红包内容-->
+  <view class="mb_cont">
+    <view class="hb_money"><text>0</text>元</view>
+    <view class="txt">已存入红包余额</view>
+    <view class="txt">可以使用摩拜单车App提现</view>
+  </view>
+</view>

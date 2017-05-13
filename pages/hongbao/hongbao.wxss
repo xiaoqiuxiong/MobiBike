@@ -1,0 +1,30 @@
+/*hongbao.wxss*/
+view {
+  background-color: transparent;
+}
+/*背景图*/
+.beijing {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: -1;
+}
+/*红包内容*/
+.mb_cont {
+  z-index: 1;
+  position: absolute;
+  top: 150rpx;
+  text-align: center;
+}
+.hb_money {
+  color: orangered
+}
+.hb_money text {
+  font-size: 6em;
+  color: orangered
+}
+.txt {
+  color: #2F4F4F;
+}
